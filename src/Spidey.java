@@ -23,13 +23,19 @@ public class Spidey {
 		}
 		System.out.println("");
 	}
+	
+	public static void clear() { 
+		for (int i = 0; i < 100; i++ ) { 
+			System.out.println("\n");
+		}
+	}
 
 	public static void main(String[] args) {   
 		
 		//Criando os personagens e definindo seus atributos 
-    	Character spiderMan = new Character("Homem Aranha",100,250,35,15,25)    ;
-    	Character greenGoblin = new Character("Duende Verde", 100,200,30,15,30);
-    	Character lizard = new Character("Largato",150,300,50,30,15);
+    	Character spiderMan = new Character("Homem Aranha",150,250,35,15,25)    ;
+    	Character greenGoblin = new Character("Duende Verde", 175,200,30,15,30);
+    	Character lizard = new Character("Largato",200,300,50,30,15);
     	Character fighter = new Character("Lutador", 50, 30, 10, 5, 5);
     	
     	//Definindo as habilidades especiais de cada personagem 
@@ -65,201 +71,320 @@ public class Spidey {
     	try {  //Todo o código deve ser escrito dentro dessas chaves para poder utilizar a função de tempo "TimeUnit.SECONDS.sleep(TEMPO EM SEGUNDOS AQUI);"
     		
     		//Inicio da história 
-    		System.out.println("	Você é um garoto do Queens da cidade de Nova Iorque que nasceu no início ");
-    		System.out.println("da década de 90 e perdeu seus pais ainda criança, mas, hoje vive com sua tia ");
-    		System.out.println("e seu tio. Seus pais eram cientistas, porém, morreram em um acidente. Você é ");
-    		System.out.println("um jovem brilhante, faz de tudo para ir bem na escola e ajudar seus tios. ");
-    		System.out.println("Alguns te conhecerão pelos nomes: |amigão da vizinhança| ou |cabeça de teia|");
-    		System.out.println("mas todos saberão que sempre poderão contar com o homem aranha. \n");
-    		
-    		System.out.println("	Você é estudante da Midtown High School e, apesar de não tem muitos ");
-    		System.out.println("amigos, está sempre com Ned Leeds e as vezes com Harry Osborn. Todos ");
-    		System.out.println("estão se preparando para o passeio escolar para um laboratório. \n");
+    		//Array de textos, ou de Strings 
+    		/*Evitando de dividir o capitulo em dois, criando dois objetos diferentes
+    		 *para o mesmo capitulo, utilizamos um array, para guardar as partes do capitulo,
+    		 **/
+    		//Capitulo 1 
+    		Capitulo capitulo1 = new Capitulo(new String[] {
+    		//Parte 1 
+    		"	Você é um garoto do Queens da cidade de Nova Iorque que nasceu no início \n" + 
+    		"da década de 90 e perdeu seus pais ainda criança, mas, hoje vive com sua tia \n" + 
+    		"e seu tio. Seus pais eram cientistas, porém, morreram em um acidente. Você é \n" + 
+    		"um jovem brilhante, faz de tudo para ir bem na escola e ajudar seus tios. \n" + 
+    		"Alguns te conhecerão pelos nomes: |amigão da vizinhança| ou |cabeça de teia|\n" + 
+    		"mas todos saberão que sempre poderão contar com o homem aranha. \n\n" + 
+    		"	Você é estudante da Midtown High School e, apesar de não tem muitos \n" +
+    		"amigos, está sempre com Ned Leeds e as vezes com Harry Osborn. Todos \n" + 
+    		"estão se preparando para o passeio escolar para um laboratório. \n\n" , 
+    		//Parte 2
+    		"	Após chegar no museu você vê a garota dos seus sonhos. Vocês conversam  \n"+
+            "rápido, riem um pouco e logo após, ela pede para você fotografa-la. \n"+
+            "  [o que você faz?]\n"+
+        	"[foto] => (Tira a foto para ela)\n"+
+    	    "[apressado] => (Fala que está apressado, e não tirar a foto)\n"+
+    	    "Escolha: "});
+    		capitulo1.display(0,false);
     		
     		//Garantindo que o usuário vai dar uma entrada valida para minha primeira escolha 
-    		boolean firstStop = false; 
-    		while (firstStop == false) {
+    		 
+    		while (true) {
     			
-    			//1º Parte 
-    			System.out.println("	Após chegar no museu você vê a garota dos seus sonhos. Vocês conversam  ");
-        		System.out.println("rápido, riem um pouco e logo após, ela pede para você fotografa-la. ");
-        		System.out.println("  [o que você faz?]\n");
-        		think();
-        		
-	    		System.out.println("[foto] => (Tira a foto para ela)");
-	    		System.out.println("[apressado] => (Fala que está apressado, e não tirar a foto\n");
-	    		System.out.print("Escolha: ");
-	    		String choose = new String(input.nextLine()).toLowerCase();
+    			
+    			//Variável para armazenar opção escolhida pelo usúario
+	    		String choose = capitulo1.display(1,true);
 	    		System.out.print("\n");
+	    		clear();
 	    
-	    		//1º ramificação da 1º parte
+	    		//ramificação 1 
 	    		if ("foto".contentEquals(choose)) {
-	    			firstStop = true; 
-	    			System.out.println("	 Você(Peter) tirar a foto, porém uma aranha radioativa desce por sua teia e ");
-	        		System.out.println("pousa em seu pulso direito, além disso ela pica você e introduz uma toxina que ");
-	        		System.out.println("fundirá seus DNAs. Após todo esse evento, você se sente enjoado e após o ");
-	        		System.out.println("passeio, volta para casa. Sua noite é horrível, você tem febre e dores no corpo, ");
-	        		System.out.println("porém o amanhã será outro dia e você acordará diferente... \n");
+	    			
+	    			//Capitulo 2
+	    			Capitulo capitulo2 = new Capitulo(new String[] {
+	    			//Parte 1 
+	    			"	 Você(Peter) tirar a foto, porém uma aranha radioativa desce por sua teia e \n"+
+	        		"pousa em seu pulso direito, além disso ela pica você e introduz uma toxina que \n"+
+	        		"fundirá seus DNAs. Após todo esse evento, você se sente enjoado e após o \n"+
+	        		"passeio, volta para casa. Sua noite é horrível, você tem febre e dores no corpo, \n"+
+	        		"porém o amanhã será outro dia e você acordará diferente... \n\n"+
+	        		" No dia seguinte...\n\n"+
+	        		"	Em outra parte da cidade, o pai do seu melhor amigo (o MR. Osborn) está \n"+
+	        		"passando por experimentos genéticos. Esse experimento o dará força e \n"+
+	        		"habilidades de luta. \n\n"+
+	        		"	O circo está feito. Você consegue entrar em uma luta livre para ganhar \n"+
+	        		"dinheiro para poder comprar um carro. Seu sonho é finalmente poder levar a \n"+
+	        		"MJ para sair.\n"+
+	        		"A luta começa e você vai lutar contra o campeão dentro da gaiola. \n"});
+	    			capitulo2.display(0, false);
+	    			TimeUnit.SECONDS.sleep(10);
+	    	        //Capitulo 2 Batalha 1  
+	    			CapituloBattle capitulo2Batalha1 = new CapituloBattle(spiderMan, fighter, new String[] {
+	    			//Parte 1 
+	    			"=====================================BATALHA Nº1=====================================\n"+
+	    	        "O homem aranha entra na arena com seus braços finos, porém cheio de segredos por dentro,\n"+
+	    	        "enquanto o outro campeão, acho que não tem nada de interessante, além da coragem! rsrs\n"+
+	    	        "Irá começar em: ",		
+	    	        //Parte 2
+	    	        "Você consegue vencer a luta, porém o dinheiro não é o prometido, logo após \n"+
+	        		"isso você está saindo da arena de luta quando um ladrão passa por você e \n"+
+	        		"estava indo direto roubar o homem que te enganou. O enganador saiu \n"+
+	        		"correndo pedindo para parar o ladrão, o problema é que você o deixa sair.\n"+
 	        		
-	        		System.out.println(" No dia seguinte...\n");
-	        		
-	        		System.out.println("	Em outra parte da cidade, o pai do seu melhor amigo (o MR. Osborn) está ");
-	        		System.out.println("passando por experimentos genéticos. Esse experimento o dará força e ");
-	        		System.out.println("habilidades de luta. \n");
-	        		
-	        		System.out.println("	O circo está feito. Você consegue entrar em uma luta livre para ganhar ");
-	        		System.out.println("dinheiro para poder comprar um carro. Seu sonho é finalmente poder levar a ");
-	        		System.out.println("MJ para sair.");
-	        		System.out.println("A luta começa e você vai lutar contra o campeão dentro da gaiola. ");
-	        		
-	        		//Batalha 1
-	        		System.out.println("=====================================BATALHA Nº1=====================================");
-	        		System.out.println("O homem aranha entra na arena com seus braços finos, porém cheio de segredos por dentro,");
-	        		System.out.println("enquanto o outro campeão, acho que não tem nada de interessante, além da coragem! rsrs");
-	        		System.out.print("Irá começar em: "); 
+	        		"No final você sabe o que acontece. Sim, foi culpa sua, e a que preço?\n"});
+	        		capitulo2Batalha1.display(0, false);
 	        		countDown();
 	        		System.out.println("=====================================================================================");
-	       
-	        		//A luta só acaba quando um dos personagens morrer
-	        		while (spiderMan.getHP() > 0 && fighter.getHP() > 0) {
-	        			//Exibe informações do personagem
-	        			spiderMan.displayStatus();
-	        			fighter.displayStatus();
-	        			
-	        			//1º ataque 
-	        			spiderMan.displayHabilidades();
-	        			String attack = input.nextLine();
-	        			
-	        			//Ataque do homem aranha
-	        			for(int i = 0; i < spiderMan.special().length; i++) {
-	        				//Vai identificar qual foi a habilidade escolhida pelo personagem
-	        				if (attack.contentEquals(spiderMan.special()[i].name)) {
-	        					//Aqui vai ser usada a habilidade
-	        					spiderMan.attack(spiderMan.special()[i], fighter, fighter.setDefense());
-	        				} 
-	        			}
-	        			
-	        			if (fighter.getHP() != 0) {
-		        			System.out.println("O homem aranha pegou o lutador com as teias e meteu na parede");
-		        			System.out.println("porém o lutador conseguiu segurar uma cadeira, e deu-lhe uma ");
-		        			System.out.println("cadeirada na cabeça, deixando o homem Aranha tonto! ");
-		        			think();
-	        			}
+	        		//Inicia a 1º Batalha do capitulo 2
+	        		capitulo2Batalha1.startBattle(1);
+	        		//Mostra o pós batalha 
+	        		capitulo2Batalha1.display(1, false);
+	        		
+	        		
+        			//Capitulo 2 Batalha 2
+	        		CapituloBattle capitulo2Batalha2 = new CapituloBattle(spiderMan, greenGoblin, new String[] {
+	    	        "=====================================BATALHA Nº2=====================================\n"+
+	    	        "Pouco tempo depois aparece o primeiro vilão que você terá que enfrentar seu \n"+
+	    	        "nome é duende verde..\n"+
+	    	        "O duende verde ataca um desfile na cidade e você tem que deter ele.\n"+ 
+	    	        "A luta irá começar em: ", 
+	    		    "Você consegue deter o duende verde e descobre que ele é o pai do seu \n"+
+	    		    "melhor amigo Harry. Você não consegue contar ao seu amigo. Além disso você \n"+
+	    		    "consegue uma chance com a MJ\n\n"});
+		        	
+	        		capitulo2Batalha2.display(0, false);
+	        		countDown();
+	        		System.out.println("=====================================================================================");
+	        		//Inicia a 2º Batalha do capitulo 2
+	        		capitulo2Batalha2.startBattle(0);
+	        		//Mostra pós batalha 
+	        		capitulo2Batalha2.display(1, false);
+	        		
+	        		
+	        		//Capitulo 2 Batalha 3 
+	        		CapituloBattle capitulo2Batalha3 = new CapituloBattle(spiderMan, greenGoblin, new String[] {
+	        		"Tempo se passou e você reencontra o duende verde, porém hoje ele \n"+
+	        		"sequestrou a MJ, você terá que salvar ela. O Duende Verde então a leva para \n"+
+	        		"a ponte Queensboro, lá ele também captura um teleférico cheio de crianças.\n"+
+	        		"=====================================BATALHA Nº3=====================================\n"+
+	        		"O Homem Aranha em busca de salvar as crianças, então inicia uma batalha com o Duende Verde\n"+
+	        		"A batalha irá começar em: ", 
+	        		"O Duende Verde antes da Batalha, danificou todos os cabos do teleférico, deixando as crianças\n"+
+	        		"entre a vida e a morte. Também a Mary Jani ficou presa nas cordas da ponte, que está prestes a\n"+
+	        		"a se romper"});
+	        		capitulo2Batalha3.display(0, false);
+	        		countDown();
+	        		System.out.println("=====================================================================================");
+	        		//Inicia a 3º Batalha do Capitulo 2
+	        		capitulo2Batalha3.startBattle(1);
+	        		//Mostra o pós Batalha
+	        		capitulo2Batalha3.display(1, false);
+	        		
+	        		//Escolha final da história 
+	        		//Capitulo 3
+	        		Capitulo capitulo3 = new Capitulo(new String[] {
+	        			//Parte 1
+	        			"Você precisa escolher um dos dois para poder salvar, sua amada ou as\n"+
+	        			"crianças.\n",
+	        			//Parte da escolha
+	        			"[SalvarMJ] => (Salvar a Mary Jani)\n"+
+	        			"[SalvarCriancas] => (Salvar as crianças)\n",
+	        			//Escolha final 1
+	        			"\nO Homem Aranha consegue salvar a Mary Jani, porém os cabos contenção \n "+
+	        			"estava muito danificados e acabam se partindo, o teleférico cai no chão e \n"+ 
+	        			"todas as crianças acabam morrendo. No dia seguinte....\n"+ 
+	        			"O Homem Aranha é acusado nos jornais por matar todas as crianças, e \n"+
+	        			"o Dr Osborn."
+	        			+ ""
+	        			+ "FIIIIIIIM!!!",
+	        			//Escolha final 2 
+	        			"\nO Homem Aranha consegue salvar as crianças, e logo após consegue salvar\n"+
+	        			"e todos ficam bem, menos o Dr Osborn que morreu. No dia seguinte... \n"+
+	        			"mesmo assim o Dr Osborn foi acusado de tentar matar as crianças, e o \n"+
+	        			"Homem Aranha vira o grande herói de Nova York "
+	        			+ ""
+	        			+ "FIIIIIIIM!!!"});
+	        		while (true) {
+		        		capitulo3.display(0, false);
+		        		choose = capitulo3.display(1, true);
+		        		if ("salvarmj".contentEquals(choose)) {
+		        			capitulo3.display(2, false);
+		        			break; 
+		        		} else if ("salvarcrianas".contentEquals(choose)){ 
+		        			capitulo3.display(3, false);
+		        			break;
+		        		} else { 
+		        			System.out.println("Escolha Invalida!!");
+		        			TimeUnit.SECONDS.sleep(5);
+		        			clear();
+		        		}
 	        		}
-	        		
-	        		System.out.println("Você consegue vencer a luta, porém o dinheiro não é o prometido, logo após ");
-	        		System.out.println("isso você está saindo da arena de luta quando um ladrão passa por você e ");
-	        		System.out.println("estava indo direto roubar o homem que te enganou. O enganador saiu ");
-	        		System.out.println("correndo pedindo para parar o ladrão, o problema é que você o deixa sair.");
-	        		
-	        		System.out.println("No final você sabe o que acontece. Sim, foi culpa sua, e a que preço?");
-	        		
-	        		
-        			
-	        			        		
-	        		
-	        	//2º ramificação da 1º parte
+	        		break; 
+	        	//ramificação 2 
 	    		} else if ("apressado".contentEquals(choose)){ 
 	    			//Garantindo uma escolha valida
-	        		boolean secondStop = false;
-	        		while (secondStop == false) {
-	        			//2º parte 
-	        			System.out.println("");
-		    			System.out.println("	Peter não tira a foto e se distrai com uma sala mais isolada, que apresenta");
-		        		System.out.println("barulhos estranhos então ele pensa um pouco, se irá ou não");
+	        		while (true) {
+	        			
+	        			//Capitulo 4
+	        			Capitulo capitulo4 = new Capitulo(new String[] { 
+	        			//Parte 1 
+	        			"\n"+
+		    			"	Peter não tira a foto e se distrai com uma sala mais isolada, que apresenta\n"+
+		        		"barulhos estranhos então ele pensa um pouco, se irá ou não\n",
+		        		//Parte 2 
+		        		"[Sim]\n"+
+	        			"[Não]\n"+
+		        		"Escolha => "});
+		        		capitulo4.display(0, false);
 		        		think();
+		        		choose = capitulo4.display(1, true);
+		        		clear();
 		        		
-		        		System.out.println("[Sim]");
-		        		System.out.println("[Não]");
-		        		System.out.print("Escolha => ");
-		        		choose = input.nextLine().toLowerCase();
-		        		
-		        		//1º ramificação da 2º parte
+		        		//ramificação 1
 		        		if ("sim".contentEquals(choose)) { 
-		        			System.out.println("	Então Peter decide ir até a sala. Ao abrir a porta, ele se depara com um ");
-			        		System.out.println("compartimento de vidro cheio de aranhas, e em baixo vê as iniciais de seus ");
-			        		System.out.println("pais escrita em uma placa metálica, quando ele toca a placa uma aranha pula ");
-			        		System.out.println("nele e acaba o picando em sua nuca. Peter é pego, e é colocado para fora do ");
-			        		System.out.println("laboratório onde foi e, após isso, decide ir para casa. \n");
-			        		
-			        		System.out.println("No dia seguinte..\n");
-			        		
-			        		System.out.println("	Peter acorda se sentido estranho, suas mãos grudam nos objetos, ele tem mais ");
-			        		System.out.println("força e está com a visão boa. No mesmo dia, ao lembrar das iniciais dos pais, ");
-			        		System.out.println("ele vasculha a casa para tentar encontrar algo relacionado aos seus pais. ");
-			        		System.out.println("Então, acaba encontrando uma maleta com uma foto, onde é possível ver o pai ");
-			        		System.out.println("dele e um doutor que não tem o antebraço direito. ainda mais, Peter acha uma ");
-			        		System.out.println("pesquisa e decide estudar e tentar resolver o trabalho de seu falecido pai. \n");
-			        		
-			        		System.out.println("	Peter vai tentar contato com o amigo de seu pai para apresentar a pesquisa");
-			        		System.out.println("com a formula final, então ele conhece pessoal mente o dr. Curt Connors, e se ");
-			        		System.out.println("apresenta como um Parker. Após apresenta a pesquisa o Dr o convida para ");
-			        		System.out.println("trabalhar e colocar em pratica.");
-			        		
-			        		System.out.println("	Pressionado o dr é obrigado a testar o soro da pesquisa em si próprio,");
-			        		System.out.println("algo que vai fundir seu DNA com o de um lagarto. E de primeira o lagarto ataca");
-			        		System.out.println("a cidade de NY, então o homem aranha vai intervir no ataque. O lagarto ");
-			        		System.out.println("humanoide vai derrubando carros de uma ponte, porém em um desses carro ");
-			        		System.out.println("tem uma criança, então peter terá que decidir");
-			        		
-			        		System.out.println("[Atacar] => (Vai atrás do largato)");
-			        		System.out.println("[Salvar] => (Vai salvar a vida da criança)");
-			        		choose = input.nextLine().toLowerCase();
-			        		
-			        		if ("Atacar".contentEquals(choose)){
-			        			System.out.println("Você deixou o carro com a criança cair e foi atrás do largato, porém ");
-			        			System.out.println("não conseguiu alcançar o largato, deixando-lhe fugir");
-			        		} else if ("Salvar".contentEquals(choose)){ 
-			        			System.out.println("Ele salva a criança, que estava no carro quase caindo da ponte, por ");
-			        			System.out.println("e que por centímetros ainda estava nela. Porém deixa o largato fugir!!");
-			        		} else { 
-			        			System.out.println("");
+		        			//capitulo 5
+		        			Capitulo capitulo5 = new Capitulo(new String[] {
+		        			//Parte 1
+		        			"	Então Peter decide ir até a sala. Ao abrir a porta, ele se depara com um \n"+
+			        		"compartimento de vidro cheio de aranhas, e em baixo vê as iniciais de seus \n"+
+			        		"pais escrita em uma placa metálica, quando ele toca a placa uma aranha pula \n"+
+			        		"nele e acaba o picando em sua nuca. Peter é pego, e é colocado para fora do \n"+
+			        		"laboratório onde foi e, após isso, decide ir para casa. \n\n"+
+			        		"No dia seguinte..\n\n"+			       
+			        		"	Peter acorda se sentido estranho, suas mãos grudam nos objetos, ele tem mais \n"+
+			        		"força e está com a visão boa. No mesmo dia, ao lembrar das iniciais dos pais, \n"+
+			        		"ele vasculha a casa para tentar encontrar algo relacionado aos seus pais. \n"+
+			        		"Então, acaba encontrando uma maleta com uma foto, onde é possível ver o pai \n"+
+			        		"dele e um doutor que não tem o antebraço direito. ainda mais, Peter acha uma \n"+
+			        		"pesquisa e decide estudar e tentar resolver o trabalho de seu falecido pai. \n\n"+
+			        		"	Peter vai tentar contato com o amigo de seu pai para apresentar a pesquisa\n"+
+			        		"com a formula final, então ele conhece pessoal mente o dr. Curt Connors, e se \n"+
+			        		"apresenta como um Parker. Após apresenta a pesquisa o Dr o convida para \n"+
+			        		"trabalhar e colocar em pratica.\n",
+			        		//Parte 2 
+			        		"	Pressionado o dr é obrigado a testar o soro da pesquisa em si próprio,\n"+
+			        		"algo que vai fundir seu DNA com o de um lagarto. E de primeira o lagarto ataca\n"+
+			        		"a cidade de NY, então o homem aranha vai intervir no ataque. O lagarto \n"+
+			        		"humanoide vai derrubando carros de uma ponte, porém em um desses carro \n"+
+			        		"tem uma criança, então peter terá que decidir\n"+
+			        		"[Atacar] => (Vai atrás do largato)\n"+
+			        		"[Salvar] => (Vai salvar a vida da criança)\n"});
+			        		capitulo5.display(0, false);
+			        		while (true) {
+				        		choose = capitulo5.display(1, true);
+				        		
+				        		if ("atacar".contentEquals(choose)){
+				        			System.out.println("\nVocê deixou o carro com a criança cair e foi atrás do largato, porém ");
+				        			System.out.println("não conseguiu alcançar o largato, deixando-lhe fugir");
+				        			break;
+				        		} else if ("salvar".contentEquals(choose)){ 
+				        			System.out.println("\nEle salva a criança, que estava no carro quase caindo da ponte, por ");
+				        			System.out.println("e que por centímetros ainda estava nela. Porém deixa o largato fugir!!");
+				        			break;
+				        		} else { 
+				        			System.out.println("Opção invalida!!!");
+				        			TimeUnit.SECONDS.sleep(5);
+				        			clear();
+				        			continue;
+				        		}
 			        		}
 			        		
-			        		System.out.println("Após isso Peter tenta entender o que está acontecendo e vai até o laboratório ");
-			        		System.out.println("Oscorp, lá encontra o dr.  Connors  e  o  questiona sobre lagartos, rola uma ");
-			        		System.out.println("Logo após essa conversa o dr decide atacar a escola de peter e então chega");
-			        		System.out.println("a hora de se defender. Muita correria nos corredores de Midtown e o homem ");
-			        		System.out.println("aranha esperando sua hora...");
-			        		
-			        		System.out.println("Você espera o corredor se esvaziar e coloca seu traje, já preparado para a ");
-			        		System.out.println("batalha e mesmo assim e pego de surpresa pelo lagarto...");
-			        		
-			        		System.out.println("=====================================BATALHA Nº2=====================================");
-			        		System.out.print("A batalha irá começar em ");
+			        		//Capitulo 4 Batalha1
+			        		CapituloBattle capitulo4Batalha1 = new CapituloBattle(spiderMan, lizard, new String[] {
+			        		"Após isso Peter tenta entender o que está acontecendo e vai até o laboratório \n"+
+			        		"Oscorp, lá encontra o dr.  Connors  e  o  questiona sobre lagartos, rola uma \n"+
+			        		"Logo após essa conversa o dr decide atacar a escola de peter e então chega\n"+
+			        		"a hora de se defender. Muita correria nos corredores de Midtown e o homem \n"+
+			        		"aranha esperando sua hora...\n"+
+			        		"Você espera o corredor se esvaziar e coloca seu traje, já preparado para a \n"+
+			        		"batalha e mesmo assim e pego de surpresa pelo lagarto...\n"+
+			        		"=====================================BATALHA Nº1=====================================\n"+
+			        		"A batalha irá começar em: \n"});
+			        		capitulo4Batalha1.display(0, false);
 			        		countDown();
 			        		System.out.println("=====================================================================================");
+			        		capitulo4Batalha1.startBattle(0);
+			        		//Homem aranha regenera vida 
+			        		spiderMan.regenarahp(150);
+			        		clear();
+			        		//Capitulo 4 Batalha2 
+			        		CapituloBattle capitulo4Batalha2 = new CapituloBattle(spiderMan, lizard, new String[] {
+			        		//Inicio da batalha
+			        		"Porém o Homem Aranha vai atrás dele, e descobre o seu esconderijo, e os seus\n"+
+			        		"planos. O largato quer transforma todos os moradores da cidade de Nova York em \n"+
+			        		"reptéis, através de um dispositivo que cria uma nuvem na cidade. Esse dispositivo\n"+
+			        		"se encontra na torre Osborn, o Homem Aranha decide ir até lá, e impedir o lagarto\n"+
+			        		"=====================================BATALHA Nº2=====================================\n"+
+			        		"A batalha irá começar em: \n"});
+			        		countDown();
+			        		System.out.println("=====================================================================================");
+			        		capitulo4Batalha2.startBattle(1);
 			        		
-			        		//Batalha 2 
-			        		while (spiderMan.getHP() > 0 && fighter.getHP() > 0) {
-			        			spiderMan.displayStatus();
-			        			lizard.displayStatus();
-			        			
-			        			Random random = new Random();
-			        			int number = random.nextInt(1);
-			        			spiderMan.displayHabilidades();
-			        			if (number == 1) { 
-			        				System.out.println("[Esquivar] => (Se esquiva do próximo ataque do adversário)");
-			        			} 
-			        			
-			        			String attack = input.nextLine();
-			        			
+			        		//Capitulo 6
+			        		Capitulo capitulo6 = new Capitulo(new String[] {
+			        		//Final
+			        		"Após a batalha o lagarto se transforma em humano novamente. O Homem Aranha conseguiu \n"+
+			        		"deter os seus planos. Mas o Dr Connors fica pendurado na torre, e se encontra fraco \n"+
+			        		"então o Homem Aranha tem que decidir se irá Salva-lo ou não: \n"+
+			        		"[Sim] => (O Dr Connors será salvo) \n"+
+			        		"[Não] => \n",
+			        		//Escolha Final 1 
+			        		"O Dr Connors foi salvo, porém está acusado de atentado contra a vida de todos os \n"+
+			        		"moradores de Nova York e acabou sendo preso, conclusão: Sua segunda casa é a cadeia \n"+
+			        		"e pronto. O Homem Aranha salva o dia pela primeira Vez. Fiiiiiiiiim !!",
+			        		//Escolha Final 2
+			        		"Apesar da morte do Dr Connors ele ainda foi acusado de vários homicidios e atentado \n"+
+			        		"contra a vida de todos os moradores de Nova York. Além disso o Homem Aranha se tornou \n"+
+			        		"o grande herói da cidade de Nova York. Fiiiiiim!!"});
+			        		choose = capitulo6.display(0, true);
+			        		
+			        		while (true) {
+			        			if ("sim".contentEquals(choose)) {
+			        				capitulo6.display(1, false);
+			        				break;
+			        			} else if ("não".contentEquals(choose)) {
+			        				capitulo6.display(2, false);
+			        				break;
+			        			} else { 
+			        				System.out.println("Escolha Invalida!!");
+			        				TimeUnit.SECONDS.sleep(5);
+			        				clear();
+			        			}
 			        		}
-			        			
 			        		
-			        		secondStop = true; 
-			        	//2º ramificação da 2º parte
+			        		break; 
+			        	//Ramificação 2 
 		        		} else if ("não".contentEquals(choose)) { 
-		        			System.out.println("A história acaba aqui!!!! Rrsrs");
-		        			System.out.println("Em um filme de terror, pense comigo, se alguém se depara com uma porta de um guardo  ");
-		        			System.out.println("fechando, ela concerteza vai lar ver o que é. Eu sairia correndo, se fosse possivel até");
-		        			System.out.println("dormiria na rua rsrs");
-		        			
-		        			System.out.println("Conclusão, você não dar pra ser ator de um filme de terror kkssksksks");
+		        			//capitulo troll 
+		        			Capitulo capituloTroll = new Capitulo(new String[] {
+		        			"A história acaba aqui!!!! Rrsrs\n"+
+		        			"Em um filme de terror, pense comigo, se alguém se depara com uma porta de um quarto  \n"+
+		        			"fechando, ela concerteza vai lar ver o que é. Eu sairia correndo, se fosse possivel até\n"+
+		        			"dormiria na rua rsrs\n"+
+		        			"Conclusão, você não dar pra ser ator de um filme de terror kkssksksks\n"+
+		        			"\n Ainda não acabou, calma rsrsrs\n\n"+
+		        			"O destino arrumou uma forma de transformar o Peter no Homem Aranha. \n"+
+		        			"Tempos depois... Ele recebe uma carta do próprio Tony Stark.\n"+
+		        			"=====================================================================================\n"+
+		        			"-----------------------------isso será visto em DLC----------------------------------\n"+
+		        			"=====================================================================================\n"});
+		        			capituloTroll.display(0, false);
+		        			break;
+		        		} else { 
+		        			continue; 
 		        		}
 	        		}
 	        		
-	        		firstStop = true;  
+	        		break;  
 	        			
 		        		
 	        		
@@ -267,7 +392,7 @@ public class Spidey {
 	    		} else { 
 	    			JOptionPane.showMessageDialog
 	    				(null, "Opção Invalida", "Invalid Answer",JOptionPane.ERROR_MESSAGE);; 
-	    			
+	    			continue; 
 	    		}
     		}
     		
