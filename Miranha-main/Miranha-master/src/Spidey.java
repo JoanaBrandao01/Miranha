@@ -413,7 +413,6 @@ public class Spidey {
 			        		capitulo5.display(0, false);
 			        		//--------------------------------; 
 			        		// capitulo feito por Renato
-			        		String choose;
 			        		
 			        		Capitulo capitulor1 = new Capitulo(new String[] {
 			        		" Enquanto ainda está se acostumando com os poderes de aranha\n"+
@@ -442,7 +441,6 @@ public class Spidey {
 			        		
 			      
 			        		// capitulo feito por Renato
-			        		String choose;
 			        		
 			        		Capitulo capitulor2 = new Capitulo(new String[] {
 			        		" Ao chegar em casa seu tio está a porta lhe esperando\n"+
@@ -471,7 +469,6 @@ public class Spidey {
 			        		
 			        		//--------------------------------; 
 			        		// capitulo feito por Renato
-			        		String choose;
 			        		
 			        		Capitulo capitulor3 = new Capitulo(new String[] {
 			        		" Peter está indeciso se contará sobre o que aconteceu com ele\n"+
@@ -485,7 +482,8 @@ public class Spidey {
 			        	   		
 			            		
 			            		if ("contar".contentEquals(choose)) {
-			            			System.out.println("Peter fica aliviado de não precisar mais guardar aquilo com ele mesmo, mas seus tios o proíbem de exercer seu papel de herói, se ele quiser ser o homem aranha, deverá desobedecê-los\n");
+			            			System.out.println("Peter fica aliviado de não precisar mais guardar aquilo com ele mesmo, mas seus tios o proíbem de exercer seu\n"
+			            					+ " papel de herói, se ele quiser ser o homem aranha, deverá desobedecê-los\n");
 			            			break;
 			            		} else if("esconder".contentEquals(choose)) {
 			            			System.out.println("Ele opta por não contar a seus tios, e apesar de carregar esse peso sozinho, não põe os tios em perigo\n");
@@ -498,7 +496,6 @@ public class Spidey {
 			            		
 			        		}
 			        		// capitulo feito por Renato
-			        		String choose;
 			        		
 			        		Capitulo capitulor4 = new Capitulo(new String[] {
 			        		" Peter vai pra escola no outro dia e vê o Flash batendo em alguém,\n"+
@@ -515,7 +512,8 @@ public class Spidey {
 			        	   		
 			            		
 			            		if ("fotografar".contentEquals(choose)) {
-			            			System.out.println("Com medo, Peter se rende e tira a foto que o Flash quer, mas o Flash então larga o menino no chão e pega a câmera do Peter, ele resiste e apanha de qualquer forma, Flash consegue a câmera e nunca mais a devolve.\n");
+			            			System.out.println("Com medo, Peter se rende e tira a foto que o Flash quer, mas o Flash então larga o menino no chão e pega a câmera do Peter,\n"
+			            					+ " ele resiste e apanha de qualquer forma, Flash consegue a câmera e nunca mais a devolve.\n");
 			            			break;
 			            		} else if("negar".contentEquals(choose)) {
 			            			System.out.println("Peter se nega a tirar a foto, e então o Flash começa a bater nele, e quebra sua câmera, ninguém volta para ajudá-lo e todos vão embora.\n");
@@ -529,7 +527,6 @@ public class Spidey {
 			        		}//-----------------------;
 			        		
 			        		// capitulo feito por Renato
-			        		String choose;
 			        		
 			        		Capitulo capitulor5 = new Capitulo(new String[] {
 			        		" Ao chegar emcasa nesse dia ele encontra seus tios na cozinha\n"+
@@ -651,16 +648,137 @@ public class Spidey {
 		        			"Conclusão, você não dar pra ser ator de um filme de terror kkssksksks\n"+
 		        			"\n Ainda não acabou, calma rsrsrs\n\n"+
 		        			"O destino arrumou uma forma de transformar o Peter no Homem Aranha. \n"+
-		        			"Tempos depois... Ele recebe uma carta do próprio Tony Stark.\n"+
-		        			"=====================================================================================\n"+
-		        			"-----------------------------isso será visto em DLC----------------------------------\n"+
-		        			"=====================================================================================\n"});
+		        			"Tempos depois... Ele recebe uma carta do próprio Tony Stark.\n"});
 		        			capituloTroll.display(0, false);
+		        			
+		        			Capitulo capituloj1=new Capitulo ( new String[] {
+		        				"Peter recebe a carta do Tony Stark, e nela ele o convida para \n"+
+		        			    "dar uma volta e conversar sobre o seu ato heróico à noite.\n"+
+		        				"Peter fica muito eufórico, mas recua ao lembrar que seus tios não querem\n"+
+		        			    "que ele continue nessa vida\n\n"+
+		        				"[aceita] => (Peter aceita a proposta)\n"+
+		        				"[recusar] => (Peter recusa a proposta)\n"});
+		        			while(true) {
+		        				//capítulo1
+		        				choose = capituloj1.display(0,true);
+
+
+		        				if ("aceita".contentEquals(choose)) {
+		        					
+		        					
+		        					Capitulo capituloj2= new Capitulo ( new String[] {
+		        							"Peter aceita a proposta e à noite vai ao encontro\n"+
+		        							"de Tony no local indicado na carta.\n"+
+		        							"Ao chegar lá ele repara em um carro preto estacionado em frente ao local.\n"+
+		        							"logo percebe que tony está atrás do carro e o convida para entrar\n"+
+		        							"Peter entra no carro e fica sem graça, ele não faz ideia do porquê está ali!\n\n"+
+		        							"[perguntar] => (Peter pergunta porque está ali)\n"+
+		        							"[esperar] => (Peter espera Tony falar alguma coisa)\n"});
+		        					
+		        					while(true) {
+		        						//inicio do capítulo 2
+		        						choose=capituloj2.display(0,true);
+		        						if ("perguntar".contentEquals(choose)) {
+		        							
+		                                    Capitulo capituloj3 = new Capitulo (new String[] {
+		                                    		"Peter- O que está acontecendo, para onde está me levando?\n"+
+		        									"Tony- Aquelas lutas mostraram o seu real valor, Você está aqui\n"+
+		        									"para fazer parte da empresa Stark, se juntar a nós como novo vingador!!\n"+
+		        									"Peter fica em total extase e está prestes a realizar seu maior sonho!\n"+
+		        									"porém ele lembra dos seus tios, o que ele irá fazer agora?\n"+
+		        									"[Aceitar] => (Peter aceita, ele lida com as consequências depois)\n"+
+		        									"[Recusar] => (Peter recusa pensando nos seus tios)\n\n"});
+		                                    while(true) {
+		                                    	//inicio do capítulo 13
+		                                    	choose=capituloj3.display(0, true);
+		                                    	if ("aceitar".contentEquals(choose)) {
+		                                    		System.out.println("Peter aceitou e seus tios entenderam que isso era o sonho dele,\n"+
+		                                    	     "peter nunca foi tão feliz!!!\n\n"+
+		                                    		 "Fimmmmm");
+		                                    		break;
+		                                    	}else if("recusar".contentEquals(choose)) {
+		                                    		System.out.println("Peter recusou e seus tios nunca souberam desse encontro\n"+
+				                                    		 "Fimmmmm");
+		                                    		break;
+		                                    	}else {System.out.println("Escolha invalida!");
+		    		        					TimeUnit.SECONDS.sleep(5);
+		    		        					clear();}
+		                                    	//fim do caítulo3
+		     
+		                                    }
+		                                    
+		        						} else if("esperar".contentEquals(choose)) {
+		        							
+		        							Capitulo capituloj4 = new Capitulo (new String[] {
+		        									"Tony pergunta porque Piter está agindo estranho, e antes de receber uma resposta \n"+
+		        							        "Tony dá a proposta a piter para ele entrar nos vingadores\n\n"+
+		        								    "[vingadores] => (Peter entra para os vingadores)\n"+
+		        							        "[não aceitar] => (Peter não aceita a proposta)\n"});
+		        							while(true) {
+		        								//inicio do capítulo 4
+		        								choose=capituloj4.display(0, true);
+		                                    	if ("vingadores".contentEquals(choose)) {
+		                                    		System.out.println("Peter aceitou e seus tios entenderam que isso era o sonho dele,\n"+
+		                                    	     "peter nunca foi tão feliz!!!\n\n"+
+		                                    		 "Fimmmmm");
+		                                    		break;
+		                                    	}else if("não aceitar".contentEquals(choose)) {
+		                                    		System.out.println("Peter recusou e seus tios nunca souberam desse encontro\n"+
+				                                    		 "Fimmmmm");
+		                                    		break;
+		                                    	}else {System.out.println("Escolha invalida!");
+		    		        					TimeUnit.SECONDS.sleep(5);
+		    		        					clear();}
+		                                    	//fim do capítulo4
+		     
+		        							}
+		        						}else {System.out.println("Escolha invalida!");
+    		        					TimeUnit.SECONDS.sleep(5);
+    		        					clear();}
+		        						//fim do capítulo2
+		        					}
+		        				}else if("recusar".contentEquals(choose)) {
+		        					Capitulo capituloj5 = new Capitulo (new String[] {
+		        							"Peter recusou a proposta, mas Tony não desistiu dele.\n"+
+		        				            "Após ver que Peter não foi ao seu encontro, Tony foi até a casa dele\n "+
+		        					        "e sequestrou Peter.\n\n"+
+		        				            "Peter acorda dentro da torre dos vingadores com todos os vingadores presentes\n"+
+		        					        "Tony pede desculpas por sequestrá-lo e logo em seguida o convida para participar dos vingadores\n"+
+		        					        "[vingadores] => (Peter entra para os vingadores)\n"+
+        							        "[não aceitar] => (Peter não aceita a proposta)\n"});
+		        					
+		        					while(true) {
+        								//inicio do capítulo 5
+        								choose=capituloj5.display(0, true);
+                                    	if ("vingadores".contentEquals(choose)) {
+                                    		System.out.println("Peter aceitou e seus tios entenderam que isso era o sonho dele,\n"+
+                                    	     "peter nunca foi tão feliz!!!\n\n"+
+                                    		 "Fimmmmm");
+                                    		break;
+                                    	}else if("não aceitar".contentEquals(choose)) {
+                                    		System.out.println("Peter recusou e seus tios nunca souberam desse encontro\n"+
+		                                    		 "Fimmmmm");
+                                    		break;
+                                    	}else {System.out.println("Escolha invalida!");
+    		        					TimeUnit.SECONDS.sleep(5);
+    		        					clear();}
+                                    	//fim do capítulo5
+		        					}
+		        			    }else {
+		        					System.out.println("Escolha invalida!");
+		        					TimeUnit.SECONDS.sleep(5);
+		        					clear();}
+		        				//fim do capítulo1
+		        			}
+		        		}
+		        			
 		        			break;
-		        		} else { 
+		        		} else{
 		        			continue; 
 		        		}
-	        		}
+	        		} 
+	        		
+	        		
 	        		
 	        		break;  
 	        			
@@ -672,7 +790,7 @@ public class Spidey {
 	    				(null, "Opção Invalida", "Invalid Answer",JOptionPane.ERROR_MESSAGE);; 
 	    			continue; 
 	    		}
-    		}
+    	}
     		
     		
     	} catch (Exception e) {
